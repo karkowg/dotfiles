@@ -1,4 +1,4 @@
-<p align="center"><img src="art/banner-2x.png"></p>
+![Screenshot](art/dotfiles.svg)
 
 ## Introduction
 

@@ -1,10 +1,10 @@
 #!/bin/sh
 
-echo "Generating a new SSH key for GitHub..."
+echo "Generating a new SSH key..."
 
 # Generating a new SSH key
 # https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key
-ssh-keygen -t ed25519 -C $1 -f ~/.ssh/id_ed25519
+ssh-keygen -t ed25519 -C "$1" -f ~/.ssh/id_ed25519
 
 # Adding your SSH key to the ssh-agent
 # https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#adding-your-ssh-key-to-the-ssh-agent
@@ -15,6 +15,6 @@ echo "Host *\n AddKeysToAgent yes\n UseKeychain yes\n IdentityFile ~/.ssh/id_ed2
 
 ssh-add -K ~/.ssh/id_ed25519
 
-# Adding your SSH key to your GitHub account
+# Adding your SSH key to your GitHub/GitLab account
 # https://docs.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account
-echo "run 'pbcopy < ~/.ssh/id_ed25519.pub' and paste that into GitHub"
+echo "run 'pbcopy < ~/.ssh/id_ed25519.pub' and paste that into GitHub/GitLab"
